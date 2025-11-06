@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Temel sayfa bilgileri -->
+  <title>Serhat Özdamar — Yazılımcı</title>
+  <meta name="description" content="Full-Stack Developer | Yapay Zeka & Bulut | Sertifikalı ve proje odaklı." />
+  <meta name="author" content="Serhat Özdamar" />
+  <meta name="language" content="tr-TR" />
+
+  <!-- Open Graph (sosyal paylaşım için) -->
+  <meta property="og:title" content="Serhat Özdamar — Yazılımcı" />
+  <meta property="og:description" content="Full-Stack Developer | Yapay Zeka & Bulut | Sertifikalı ve proje odaklı." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://serhatozdamar.github.io/" />
+  <meta property="og:image" content="/assets/images/og-image.png" />
+
+  <!-- Favicons (kendi favicon dosyanı ekle) -->
+  <link rel="icon" href="/assets/favicon.ico" />
+
+  <!-- Google Font (isteğe bağlı) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Basit CSS (veya Bootstrap ekle istersen) -->
+  <style>
+    :root{
+      --bg: #ffffff;
+      --card: #f7f8fb;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --radius: 12px;
+    }
+    [data-theme="dark"]{
+      --bg: #0b1220;
+      --card: #071025;
+      --text: #e6eef8;
+      --muted: #93a6c0;
+      --accent: #3b82f6;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:4rem;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:2rem;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.75rem 0;}
+    .brand{display:flex;gap:.75rem;align-items:center;}
+    .brand img{width:44px;height:44px;border-radius:8px;object-fit:cover}
+    nav{display:flex;gap:1rem;align-items:center}
+    a{color:var(--text);text-decoration:none}
+    .muted{color:var(--muted);font-size:.95rem}
+    .btn{
+      background:var(--accent);
+      color:white;
+      padding:.5rem .9rem;
+      border-radius:10px;
+      display:inline-block;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    /* Basit grid */
+    .grid{display:grid;gap:1rem}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .card{
+      background:var(--card);
+      padding:1rem;
+      border-radius:var(--radius);
+      box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+    }
+
+    /* Proje kartı örneği */
+    .proj-title{font-weight:600;margin:0 0 .25rem}
+    .proj-desc{margin:0 .0 0.5rem;color:var(--muted);font-size:.95rem}
+    .badges{display:flex;gap:.5rem;flex-wrap:wrap}
+    .badge{background:rgba(0,0,0,.06);padding:.25rem .5rem;border-radius:999px;font-size:.8rem}
+
+    /* Sertifika galeri */
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+    .cert{display:flex;flex-direction:column;gap:.5rem;align-items:flex-start}
+
+    /* Footer */
+    footer{padding:2rem 0;margin-top:2rem;border-top:1px solid rgba(0,0,0,0.04)}
+    footer .muted{font-size:.9rem}
+
+    /* Responsive */
+    @media (max-width:800px){
+      header{flex-direction:column;align-items:flex-start;gap:.5rem}
+      .grid.cols-3{grid-template-columns:1fr}
+    }
+
+    /* Tema düğmesi */
+    .theme-toggle{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:.4rem .5rem;border-radius:8px;cursor:pointer}
+  </style>
+
+  <!-- SEO - canonical (isteğe bağlı) -->
+  <link rel="canonical" href="https://serhatozdamar.github.io/" />
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <img src="/img/profile.webp" alt="Profil fotoğrafı (Serhat)">
+        <div>
+          <div style="font-weight:700">Serhat Özdamar</div>
+          <div class="muted">Full-Stack Developer • Yapay Zeka & Bulut</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#projects" class="muted">Projeler</a>
+        <a href="#certificates" class="muted">Sertifikalar</a>
+        <a href="#contact" class="muted">İletişim</a>
+        <button id="themeBtn" class="theme-toggle" aria-label="Tema değiştir">Koyu/açık</button>
+      </nav>
+    </header>
+
+    <!-- HERO / ÖZET -->
+    <section style="display:flex;gap:1.5rem;align-items:center;margin:1rem 0 1.5rem;flex-wrap:wrap">
+      <div style="flex:1;min-width:250px">
+        <h1 style="margin:0 0 .4rem">Merhaba, ben Serhat</h1>
+        <p class="muted" style="margin:0 0 1rem">Yazılım geliştiricisi — web, veri ve yapay zekâ alanlarında proje üretirim. BTK, Microsoft ve Google eğitimleri tamamlandı.</p>
+        <a class="btn" href="#projects">Projelerime Bak</a>
+      </div>
+      <div style="width:220px">
+        <!-- Basit profil kartı -->
+        <div class="card" style="text-align:center">
+          <img src="/img/profile.webp" alt="Serhat" style="width:88px;height:88px;border-radius:999px;object-fit:cover;margin-bottom:.5rem">
+          <div style="font-weight:700">Serhat Özdamar</div>
+          <div class="muted" style="font-size:.9rem">Full-Stack Developer</div>
+          <div style="margin-top:.75rem"><a class="btn" href="https://github.com/serhatozdamar" target="_blank">GitHub</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJELER -->
+    <section id="projects" style="margin-top:1.5rem">
+      <h2 style="margin-bottom:.5rem">Projeler</h2>
+      <p class="muted" style="margin-top:0">Öne çıkan projelerim — her birinde repo linki, açıklama ve teknoloji listesi bulunur.</p>
+
+      <div class="grid cols-3" style="margin-top:1rem">
+        <!-- Örnek proje kartı -->
+        <article class="card">
+          <div class="proj-title">Kişisel Not Uygulaması</div>
+          <p class="proj-desc">Tarayıcı tabanlı basit not uygulaması — LocalStorage ile saklama, temalar ve etiketleme.</p>
+          <div class="badges">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">JavaScript</span>
+            <a href="https://github.com/serhatozdamar/not-app" style="margin-left:auto" class="muted">Repo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="proj-title">Veri Analizi Dashboard</div>
+          <p class="proj-desc">Pandas ile veri temizleme, Matplotlib/Plotly ile görselleştirme. Jupyter Notebook + README.</p>
+          <div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">Pandas</span>
+            <span class="badge">Jupyter</span>
+            <a href="https://github.com/serhatozdamar/data-dashboard" style="margin-left:auto" class="muted">Repo ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="proj-title">Mini REST API</div>
+          <p class="proj-desc">Flask tabanlı REST API, Dockerfile ve basit CI workflow örneği.</p>
+          <div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">Flask</span>
+            <span class="badge">Docker</span>
+            <a href="https://github.com/serhatozdamar/flask-api" style="margin-left:auto" class="muted">Repo ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERTİFİKALAR -->
+    <section id="certificates" style="margin-top:2rem">
+      <h2>Sertifikalar</h2>
+      <p class="muted" style="margin-top:0">E-Devlet ve uluslararası platformlardan aldığım bazı sertifikalar.</p>
+
+      <div class="cert-grid" style="margin-top:1rem">
+        <div class="card cert">
+          <strong>BTK Akademi — Python ile Programlama</strong>
+          <div class="muted">May 2025</div>
+          <a href="/assets/certs/btk-python.pdf" class="muted">Sertifikayı Gör ↗</a>
+        </div>
+
+        <div class="card cert">
+          <strong>Microsoft — Azure Fundamentals (AZ-900)</strong>
+          <div class="muted">June 2025</div>
+          <a href="/assets/certs/az-900.pdf" class="muted">Sertifikayı Gör ↗</a>
+        </div>
+
+        <div class="card cert">
+          <strong>Turkcell — Flutter 101</strong>
+          <div class="muted">May 2025</div>
+          <a href="/assets/certs/turkcell-flutter.pdf" class="muted">Sertifikayı Gör ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="contact" style="margin-top:2rem">
+      <h2>İletişim</h2>
+      <p class="muted">İş / proje teklifleri ve işbirlikleri için bana ulaşın.</p>
+
+      <div class="grid" style="margin-top:1rem">
+        <div class="card" style="display:flex;flex-direction:column;gap:.75rem">
+          <div><strong>E-posta</strong></div>
+          <div class="muted">serhat@example.com</div>
+
+          <div><strong>LinkedIn</strong></div>
+          <div><a href="https://linkedin.com/in/serhatozdamar" class="muted">linkedin.com/in/serhatozdamar</a></div>
+
+          <div style="margin-top:.5rem">
+            <!-- Basit iletişim formu (statik, GitHub Pages ile çalışmaz; form backend ister) -->
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+              <label class="muted" style="display:block;margin-bottom:.25rem">Mesajın</label>
+              <textarea name="message" rows="4" style="width:100%;padding:.5rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06)" placeholder="Merhaba..."></textarea>
+              <input type="text" name="email" placeholder="E-posta adresi" style="width:100%;padding:.5rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06);margin-top:.5rem">
+              <button type="submit" class="btn" style="margin-top:.5rem">Gönder</button>
+            </form>
+            <small class="muted">Not: GitHub Pages kullanıyorsan Formspree veya Netlify Forms gibi servisleri kullan.</small>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Hızlı linkler</h3>
+          <ul style="padding-left:1rem;margin:0" class="muted">
+            <li><a href="https://github.com/serhatozdamar" target="_blank">GitHub</a></li>
+            <li><a href="https://serhatozdamar.github.io" target="_blank">Kişisel Site</a></li>
+            <li><a href="https://linkedin.com/in/serhatozdamar" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="muted">© <span id="year"></span> Serhat Özdamar. Tüm hakları saklıdır.</div>
+    </footer>
+  </div>
+
+  <!-- Basit JS: tema + yıl -->
+  <script>
+    // Tema kontrolü (localStorage ile hatırla)
+    (function(){
+      const themeBtn = document.getElementById('themeBtn');
+      const current = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if(current === 'dark') document.documentElement.setAttribute('data-theme','dark');
+
+      themeBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if(isDark){
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme','light');
+        } else {
+          document.documentElement.setAttribute('data-theme','dark');
+          localStorage.setItem('theme','dark');
+        }
+      });
+
+      // Yılı güncelle
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
